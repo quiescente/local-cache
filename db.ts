@@ -1,4 +1,4 @@
-import { DatabaseSync, SQLOutputValue } from "node:sqlite";
+import { DatabaseSync } from "node:sqlite";
 import type { PersistenceLayer } from "./types.ts";
 
 export class Database implements PersistenceLayer {
