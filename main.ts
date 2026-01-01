@@ -17,7 +17,7 @@ export class LocalCache implements SerializablePersistenceLayer {
     key: string,
     value: T,
     serialize: (value: T) => string = JSON.stringify,
-  ) {
+  ): void {
     return this.db.set(key, serialize(value));
   }
 
