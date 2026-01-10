@@ -54,4 +54,8 @@ export class Database implements PersistenceLayer {
 
     return row?.value ? row.value.toString() : undefined;
   }
+
+  public delete(key: string) {
+    this.db.prepare(`DELETE from main WHERE key = $key;`).run({ $key: key });
+  }
 }

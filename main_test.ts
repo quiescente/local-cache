@@ -15,6 +15,16 @@ Deno.test(function localCacheUpsertTest() {
   });
 });
 
+Deno.test(function localCacheDeleteTest() {
+  cache.set("1", 1);
+
+  assertEquals(cache.get("1"), 1);
+
+  cache.delete("1");
+
+  assertEquals(cache.get("1"), undefined);
+});
+
 Deno.test(function cacheReturnUndefinedOnMissingKeyTest() {
   assertEquals(
     cache.get("non_existent_key"),

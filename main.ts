@@ -54,4 +54,12 @@ export class LocalCache implements SerializablePersistenceLayer {
 
     return value !== undefined ? deserialize(value) : undefined;
   }
+
+  /*
+   * A method to delete a key from the cache
+   * @param key The key that was used to set a value before
+   */
+  public delete(key: string) {
+    this.db.delete(key);
+  }
 }
